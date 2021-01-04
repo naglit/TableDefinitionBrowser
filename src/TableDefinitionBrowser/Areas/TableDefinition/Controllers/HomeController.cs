@@ -9,6 +9,8 @@ using TableDefinitionBrowser.Models;
 
 namespace TableDefinitionBrowser.Controllers
 {
+
+    [Area("TableDefinition")] 
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

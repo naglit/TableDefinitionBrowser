@@ -51,7 +51,7 @@ namespace TableDefinitionBrowser
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{area=TableDefinition}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
