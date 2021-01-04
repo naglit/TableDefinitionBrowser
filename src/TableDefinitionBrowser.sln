@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDefinitionBrowser", "TableDefinitionBrowser\TableDefinitionBrowser.csproj", "{AAA40D62-37BE-4DFC-9785-088CF20DD9CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableDefinitionBrowser", "TableDefinitionBrowser\TableDefinitionBrowser.csproj", "{AAA40D62-37BE-4DFC-9785-088CF20DD9CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDefinitionBrowser.DataAccess", "TableDefinitionBrowser.DataAccess\TableDefinitionBrowser.DataAccess.csproj", "{D2CC6AA1-8D98-444D-8CD1-32415A274B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDefinitionBrowser.Models", "TableDefinitionBrowser.Models\TableDefinitionBrowser.Models.csproj", "{0BC82677-4A3B-4353-888A-077B6DD5F1D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDefinitionBrowser.Utility", "TableDefinitionBrowser.Utility\TableDefinitionBrowser.Utility.csproj", "{9865C7FF-742B-4272-ACB0-7026A8370DB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{AAA40D62-37BE-4DFC-9785-088CF20DD9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAA40D62-37BE-4DFC-9785-088CF20DD9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAA40D62-37BE-4DFC-9785-088CF20DD9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2CC6AA1-8D98-444D-8CD1-32415A274B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2CC6AA1-8D98-444D-8CD1-32415A274B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2CC6AA1-8D98-444D-8CD1-32415A274B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2CC6AA1-8D98-444D-8CD1-32415A274B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC82677-4A3B-4353-888A-077B6DD5F1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC82677-4A3B-4353-888A-077B6DD5F1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC82677-4A3B-4353-888A-077B6DD5F1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC82677-4A3B-4353-888A-077B6DD5F1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9865C7FF-742B-4272-ACB0-7026A8370DB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9865C7FF-742B-4272-ACB0-7026A8370DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9865C7FF-742B-4272-ACB0-7026A8370DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9865C7FF-742B-4272-ACB0-7026A8370DB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
