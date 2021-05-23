@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableDefinitionBrowser", "TableDefinitionBrowser\TableDefinitionBrowser.csproj", "{AAA40D62-37BE-4DFC-9785-088CF20DD9CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDefinitionBrowser.DataAccess", "TableDefinitionBrowser.DataAccess\TableDefinitionBrowser.DataAccess.csproj", "{D2CC6AA1-8D98-444D-8CD1-32415A274B31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableDefinitionBrowser.DataAccess", "TableDefinitionBrowser.DataAccess\TableDefinitionBrowser.DataAccess.csproj", "{D2CC6AA1-8D98-444D-8CD1-32415A274B31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDefinitionBrowser.Models", "TableDefinitionBrowser.Models\TableDefinitionBrowser.Models.csproj", "{0BC82677-4A3B-4353-888A-077B6DD5F1D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableDefinitionBrowser.Models", "TableDefinitionBrowser.Models\TableDefinitionBrowser.Models.csproj", "{0BC82677-4A3B-4353-888A-077B6DD5F1D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableDefinitionBrowser.Utility", "TableDefinitionBrowser.Utility\TableDefinitionBrowser.Utility.csproj", "{9865C7FF-742B-4272-ACB0-7026A8370DB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableDefinitionBrowser.Utility", "TableDefinitionBrowser.Utility\TableDefinitionBrowser.Utility.csproj", "{9865C7FF-742B-4272-ACB0-7026A8370DB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

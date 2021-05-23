@@ -38,8 +38,6 @@ namespace TableDefinitionBrowser.DataAccess
             objFromDb.Category = tableDefinition.Category;
             objFromDb.Owner = tableDefinition.Owner;
             objFromDb.Remarks = tableDefinition.Remarks;
-            objFromDb.CreatedBy = tableDefinition.CreatedBy;
-            objFromDb.CreatedAt = tableDefinition.CreatedAt;
             objFromDb.UpdatedBy = tableDefinition.UpdatedBy;
             objFromDb.UpdatedAt = tableDefinition.UpdatedAt;
 

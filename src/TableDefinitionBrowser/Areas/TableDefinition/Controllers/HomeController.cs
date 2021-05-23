@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using TableDefinitionBrowser.DataAccess;
 using TableDefinitionBrowser.DataAccess.Data;
+using TableDefinitionBrowser.DataAccess.Data.Repository;
 using TableDefinitionBrowser.Models;
 
 namespace TableDefinitionBrowser.Controllers
@@ -16,17 +18,52 @@ namespace TableDefinitionBrowser.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ApplicationDbContext _context;
+        private readonly UnitOfWork _unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger, UnitOfWork unitOfWork)
         {
             _logger = logger;
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.TableDefinition.ToListAsync());
+            return View(_unitOfWork.TableDefinition.GetAll());
+        }
+
+        public IActionResult Upsert(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return View(new TableDefinition());
+
+            var td = _unitOfWork.TableDefinition.Get(id);
+            if (td == null) return NotFound();
+
+            return View(td);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert(TableDefinition td)
+        {
+            if (ModelState.IsValid)
+            {
+                td.UpdatedAt = DateTime.Now;
+                td.UpdatedBy = "001";
+
+                var table = _unitOfWork.TableDefinition.Get(td.PhysicalTableName);
+                if (table == null)
+                {
+                    td.CreatedAt = DateTime.Now;
+                    _unitOfWork.TableDefinition.Add(td);
+                }
+                else
+                {
+                    _unitOfWork.TableDefinition.Update(td);
+                }
+                _unitOfWork.Save();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(td);
         }
 
         public IActionResult Privacy()

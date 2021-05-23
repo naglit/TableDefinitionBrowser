@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TableDefinitionBrowser.DataAccess.Data;
+using TableDefinitionBrowser.DataAccess.Data.Repository;
 
 namespace TableDefinitionBrowser
 {
@@ -29,6 +30,7 @@ namespace TableDefinitionBrowser
             services.AddControllersWithViews().AddNewtonsoftJson().AddRazorRuntimeCompilation();
             services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<UnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

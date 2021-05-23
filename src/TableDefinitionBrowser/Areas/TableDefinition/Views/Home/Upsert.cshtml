@@ -1,0 +1,87 @@
+﻿@model TableDefinitionBrowser.Models.TableDefinition
+
+@{
+    var title = "Create TableDefinition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="Upsert">
+
+    <div class="row px-2 mx-2 backgroundWhite border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @if (string.IsNullOrEmpty(Model.PhysicalTableName) == false)
+        {
+            <input type="hidden" asp-for="PhysicalTableName" />
+            title = "Edit TableDefinition";
+        }
+
+        <div class="col-12">
+            <h2 class="text-primary">@title</h2>
+            <br />
+        </div>
+        <div class="col-8">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="PhysicalTableName"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="PhysicalTableName" class="form-control" />
+                    <span asp-validation-for="PhysicalTableName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="LogicalTableName"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="LogicalTableName" class="form-control" />
+                    <span asp-validation-for="LogicalTableName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Category"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Category" class="form-control" />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Owner"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Owner" class="form-control" />
+                    <span asp-validation-for="Owner" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Remarks"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Remarks" class="form-control" />
+                    <span asp-validation-for="Remarks" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-8 offset-4">
+                    @if (string.IsNullOrEmpty(Model.PhysicalTableName) == false)
+                    {
+                        //Edit button and back to list
+                        <partial name="_EditAndBackToListButton" model="Model.PhysicalTableName" />
+                    }
+                    else
+                    {
+                        //Create button and back to list
+                        <partial name="_CreateAndBackToListButton" />
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
