@@ -32,6 +32,10 @@ namespace TableDefinitionBrowser.DataAccess.Data.Repository
         {
             return dbSet.Find(id);
         }
+        public T Get(string[] ids)
+        {
+            return dbSet.Find(ids);
+        }
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null)
         {

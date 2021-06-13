@@ -31,6 +31,13 @@ namespace TableDefinitionBrowser.Controllers
             return View(_unitOfWork.TableDefinition.GetAll());
         }
 
+		public IActionResult Details(string id)
+		{
+			if (string.IsNullOrEmpty(id)) return View();
+
+            return RedirectToAction("Index", "ColumnDefinition", new { tableName = id });
+		}
+
         public IActionResult Upsert(string id)
         {
             if (string.IsNullOrEmpty(id)) return View(new TableDefinition());
@@ -49,10 +56,11 @@ namespace TableDefinitionBrowser.Controllers
             {
                 td.UpdatedAt = DateTime.Now;
                 td.UpdatedBy = "001";
-
+                
                 var table = _unitOfWork.TableDefinition.Get(td.PhysicalTableName);
                 if (table == null)
                 {
+                    td.CreatedBy = "001";
                     td.CreatedAt = DateTime.Now;
                     _unitOfWork.TableDefinition.Add(td);
                 }

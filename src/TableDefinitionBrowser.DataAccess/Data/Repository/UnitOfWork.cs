@@ -13,10 +13,12 @@ namespace TableDefinitionBrowser.DataAccess.Data.Repository
         {
             _db = db;
             TableDefinition = new TableDefinitionRepository(_db);
+            ColumnDefinition = new ColumnDefinitionRepository(_db);
         }
 
         public TableDefinitionRepository TableDefinition { get; private set; }
-        
+        public ColumnDefinitionRepository ColumnDefinition { get; private set; }
+
         public void Dispose()
         {
             _db.Dispose();

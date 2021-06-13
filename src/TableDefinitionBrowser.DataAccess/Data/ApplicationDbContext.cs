@@ -14,7 +14,13 @@ namespace TableDefinitionBrowser.DataAccess.Data
         {
         }
 
-        public DbSet<TableDefinition> TableDefinition { get; set; }
+		protected override void OnModelCreating(ModelBuilder builder)
+		{
+            base.OnModelCreating(builder);
+            builder.Entity<ColumnDefinition>().HasKey(cd => new { cd.TableName, cd.PhysicalColumnName });
+        }
 
+        public DbSet<TableDefinition> TableDefinition { get; set; }
+        public DbSet<ColumnDefinition> ColumnDefinition { get; set; }
     }
 }

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<TableDefinitionBrowser.Models.ColumnDefinition>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+	<a asp-action="Upsert" asp-route-tableName="@TempData["TableName"]" >Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.TableName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PhysicalColumnName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.LogicalColumnName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DataType)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Size)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.IsNotNull)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Default)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Remarks)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CreatedBy)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CreatedAt)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UpdatedBy)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UpdatedAt)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.TableName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PhysicalColumnName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.LogicalColumnName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.DataType)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Size)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.IsNotNull)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Default)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Remarks)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CreatedBy)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CreatedAt)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.UpdatedBy)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.UpdatedAt)
+			</td>
+			<td>
+				<a asp-action="Upsert" asp-route-tableName="@item.TableName" asp-route-physicalColumnName="@item.PhysicalColumnName">Edit</a> |
+				<a asp-action="Details" asp-route-tableName="@item.TableName"asp-route-physicalColumnName="@item.PhysicalColumnName">Details</a> |
+				<a asp-action="Delete" asp-route-tableName="@item.TableName" asp-route-physicalColumnName="@item.PhysicalColumnName">Delete</a>
+			</td>
+		</tr>
+		}
+	</tbody>
+</table>
+
